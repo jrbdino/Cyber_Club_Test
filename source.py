@@ -9,8 +9,7 @@ When adding a utility function, add a comment to describe what it does and what 
 def str2bf(obj):  # Takes string (or iterable) 'obj' and returns the code for how to output 'obj' in esolang BF as a string.
     prev = 0
     n = str()
-    for c in obj:
-        curr = ord(c)
+    for curr in map(ord, obj):
         if curr != prev:
             if curr > prev:
                 n += '+' * (curr - prev)
